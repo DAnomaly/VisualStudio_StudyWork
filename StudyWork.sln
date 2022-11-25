@@ -9,8 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-photoviewer", "02-photov
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NOTE", "NOTE", "{F8456F77-C553-43EB-9F0F-451612252131}"
 	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 		Visual Studio 단축키.txt = Visual Studio 단축키.txt
-		찾기.txt = 찾기.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-mathquiz", "03-mathquiz\03-mathquiz.csproj", "{B4C151CF-988E-4A03-A02D-4EB47DFFE602}"
