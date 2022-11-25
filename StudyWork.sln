@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-start", "01-start\01-start.csproj", "{842A1F69-A70B-4FEB-892E-E832346A14F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-photoviewer", "02-photoviewer\02-photoviewer.csproj", "{B95B01E8-D52A-42F7-A634-2CB52A263E96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NOTE", "NOTE", "{F8456F77-C553-43EB-9F0F-451612252131}"
+	ProjectSection(SolutionItems) = preProject
+		Visual Studio 단축키.txt = Visual Studio 단축키.txt
+		찾기.txt = 찾기.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-mathquiz", "03-mathquiz\03-mathquiz.csproj", "{B4C151CF-988E-4A03-A02D-4EB47DFFE602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-matchgame", "04-matchgame\04-matchgame.csproj", "{C4ECCA93-778C-42AB-8ED4-38F596FE2BA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-DemoCalculator", "05-DemoCalculator\05-DemoCalculator.csproj", "{09BEAFDF-D9FC-4131-91FF-145ACB682972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "TestApplication\TestApplication.csproj", "{E74B0A1F-0967-47BA-A16F-05239A40B547}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{842A1F69-A70B-4FEB-892E-E832346A14F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842A1F69-A70B-4FEB-892E-E832346A14F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842A1F69-A70B-4FEB-892E-E832346A14F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842A1F69-A70B-4FEB-892E-E832346A14F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B95B01E8-D52A-42F7-A634-2CB52A263E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95B01E8-D52A-42F7-A634-2CB52A263E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95B01E8-D52A-42F7-A634-2CB52A263E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B95B01E8-D52A-42F7-A634-2CB52A263E96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C151CF-988E-4A03-A02D-4EB47DFFE602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C151CF-988E-4A03-A02D-4EB47DFFE602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C151CF-988E-4A03-A02D-4EB47DFFE602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C151CF-988E-4A03-A02D-4EB47DFFE602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4ECCA93-778C-42AB-8ED4-38F596FE2BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4ECCA93-778C-42AB-8ED4-38F596FE2BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4ECCA93-778C-42AB-8ED4-38F596FE2BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4ECCA93-778C-42AB-8ED4-38F596FE2BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09BEAFDF-D9FC-4131-91FF-145ACB682972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09BEAFDF-D9FC-4131-91FF-145ACB682972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09BEAFDF-D9FC-4131-91FF-145ACB682972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09BEAFDF-D9FC-4131-91FF-145ACB682972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E74B0A1F-0967-47BA-A16F-05239A40B547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E74B0A1F-0967-47BA-A16F-05239A40B547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E74B0A1F-0967-47BA-A16F-05239A40B547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E74B0A1F-0967-47BA-A16F-05239A40B547}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

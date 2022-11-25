@@ -1,0 +1,36 @@
+Visual Studio 단축키
+
+[주석]
+Ctrl + K + C	:	주석	
+Ctrl + K + U	:	주석해제
+
+[표시]
+Ctrl + M + M	:	커서가 위치한 region/블럭을 최소화, 최대화
+Ctrl + M + L	:	모든 코드의 region/블럭을 최소화, 최대화
+Ctrl + M + O	:	정의 부분만 보이기
+
+[기호 찾기]
+F12					:	해당 클래스, 메소드, 변수 선언으로 이동한다
+Shift + Alt + F12	:	선언, 사용된 부분 모두 찾는다
+
+[디버그/빌드]
+F5					:	디버그 시작
+Shift + F5			:	디버그 종료
+Ctrl + F5			:	프로그램 시작
+Ctrl + F9			:	BreakPoint 설정
+Ctrl + Shift + F9	:	BreakPoint해제 설정
+Ctrl + F10			:	커서가 있는곳까지 실행
+Ctrl + Shift + B	:	전체프로젝트 빌드
+Alt+B, C			:	해당 프로젝트만 정리
+Alt+B, U			:	해당 프로젝트만 빌드
+
+[편집]
+Ctrl + G			:	줄이동
+Ctrl + K + F		:	자동정리
+Ctrl + L			:	한줄 잘라내기
+Ctrl + Shift + L	:	한줄 지우기
+Shift + Del			:	한줄 지우기
+Shift + Alt + Arrow	:	다중 편집모드
+
+[창]
+Shift + Alt + Enter :	전체 창
