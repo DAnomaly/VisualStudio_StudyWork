@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-SetTimeGenerateFile", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-SetTimeGenerateFile2", "SetTimeGenerateFile2\08-SetTimeGenerateFile2.csproj", "{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-SetTimeGenerateFile2_Back", "SetTimeGenerateFile2_Back\08-SetTimeGenerateFile2_Back.csproj", "{51418D53-1006-432B-804E-E30BD02A733A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51418D53-1006-432B-804E-E30BD02A733A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51418D53-1006-432B-804E-E30BD02A733A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51418D53-1006-432B-804E-E30BD02A733A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51418D53-1006-432B-804E-E30BD02A733A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
