@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace _05_DemoCalculator.Util
 {
@@ -73,7 +70,7 @@ namespace _05_DemoCalculator.Util
             }
             else if (sNum.ToString().Contains(".") ?
                     num1.Length < numMaxLenth + 1 && sNum.ToString().Substring(num1.ToString().IndexOf(".")).Length < decMaxLenth + 1 :
-                    sNum.Length < numMaxLenth) 
+                    sNum.Length < numMaxLenth)
             {
                 // 입력범위를 체크한다.
                 // numMaxLenth보다 숫자 자리수가 많으면 안되며,

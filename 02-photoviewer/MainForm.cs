@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -49,7 +42,7 @@ namespace _02_photoviewer
         {
             // Show the  color dialog box. If the user clicks OK, change the
             // PictureBox control's background to the color the user chose.
-            if(colorDialog.ShowDialog() == DialogResult.OK)
+            if (colorDialog.ShowDialog() == DialogResult.OK)
                 pictureBox1.BackColor = colorDialog.Color;
         }
 

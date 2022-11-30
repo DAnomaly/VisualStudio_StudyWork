@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _03_mathquiz
@@ -107,7 +101,7 @@ namespace _03_mathquiz
                 return false;
         }
 
-        
+
 
         public MainForm()
         {
@@ -141,7 +135,7 @@ namespace _03_mathquiz
                 // Time Left label.
                 timeLeft = timeLeft - 1;
                 timeLabel.Text = timeLeft + "seconds";
-                if(timeLeft <= 5)
+                if (timeLeft <= 5)
                 {
                     timeLabel.BackColor = Color.Red;
                     timeLabel.ForeColor = Color.White;
@@ -167,7 +161,7 @@ namespace _03_mathquiz
             // Select the whole answer in the NumericupDown control.
             NumericUpDown answerBox = sender as NumericUpDown;
 
-            if(answerBox != null)
+            if (answerBox != null)
             {
                 int lengthOfAnswer = answerBox.Value.ToString().Length;
                 answerBox.Select(0, lengthOfAnswer);

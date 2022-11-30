@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _04_matchgame
@@ -65,9 +60,9 @@ namespace _04_matchgame
             // Go through all of the labels in the TableLayoutPanel, 
             // checking each one to see if its icon is matched
             foreach (Control control in tableLayoutPanel1.Controls)
-            {                                                      
-                Label iconLabel = control as Label;                
-                                                                   
+            {
+                Label iconLabel = control as Label;
+
                 if (iconLabel != null)
                 {
                     if (iconLabel.ForeColor == iconLabel.BackColor)

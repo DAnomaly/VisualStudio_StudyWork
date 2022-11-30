@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using _05_DemoCalculator.Util;
+using System;
 using System.Windows.Forms;
-
-using _05_DemoCalculator.Util;
 
 namespace _05_DemoCalculator
 {
@@ -54,7 +46,7 @@ namespace _05_DemoCalculator
         private void signButton_Click(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            if(button != null)
+            if (button != null)
                 calLabel.Text = calc.InputSign(button.Text);
         }
 

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace _06_WebSocketConnection
+﻿namespace _06_WebSocketConnection
 {
     class Program
     {
