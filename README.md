@@ -1,4 +1,5 @@
 # VisualStudio_StudyWork
+github 주소: https://github.com/DAnomaly/VisualStudio_StudyWork
 
 ## ProjectName: 02-photoviewer
 1. 기본적인 Dialog 사용법
@@ -23,3 +24,14 @@
 ## ProjectName: 05-DemoCalculator
 1. Decimal 클래스
 2. StringBuilder 클래스
+
+## ProjectName: 06-WebSocketConnection
+1. 웹소켓 연결
+
+## ProjectName: 07-SetTimeGenerateFile
+1. 지정된시간 파일생성 프로그램
+2. 프로젝트 내부 README파일 참조
+
+## ProjectName: 08-SetTimeGenerateFile2
+1. 07번 프로젝트 단점 보안 프로젝트
+2. 제작중
