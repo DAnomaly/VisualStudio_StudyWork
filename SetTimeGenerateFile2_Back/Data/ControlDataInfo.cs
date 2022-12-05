@@ -10,7 +10,7 @@ namespace SetTimeGenerateFile2.Data
         /// <summary>
         /// 클래스 파일 저장경로
         /// </summary>
-        private static string GetClassFolderPath { get { return Application.StartupPath + "/Data"; } }
+        private static string GetClassFolderPath { get { return System.IO.Directory.GetCurrentDirectory() + "/Data"; } }
 
         /// <summary>
         /// DataInfo클래스를 파일로 저장
@@ -31,10 +31,31 @@ namespace SetTimeGenerateFile2.Data
                 FileName = fileName,
                 Content = content,
                 WorkTime = setTime.Ticks,
-                RegTime = setTime.Ticks
+                RegTime = DateTime.Now.Ticks
             };
 
             string path = GetClassFolderPath + "/" + fileName[..fileName.LastIndexOf(".")] + ".xml";
+            // 해당 저장 경로에 파일이 있을경우 삭제
+            if (File.Exists(path))
+                File.Delete(path);
+
+            // 클래스를 파일로 저장
+            using (StreamWriter wr = new StreamWriter(path))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(DataInfo));
+                xs.Serialize(wr, data);
+            }
+        }
+
+        /// <summary>
+        /// DataInfo클래스를 파일로 저장
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="content"></param>
+        /// <param name="setTime"></param>
+        public static void SaveDataInfo(DataInfo data)
+        {
+            string path = GetClassFolderPath + "/" + data.FileName[..data.FileName.LastIndexOf(".")] + ".xml";
             // 해당 저장 경로에 파일이 있을경우 삭제
             if (File.Exists(path))
                 File.Delete(path);

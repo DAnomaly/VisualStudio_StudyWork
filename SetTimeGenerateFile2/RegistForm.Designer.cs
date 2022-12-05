@@ -30,10 +30,10 @@
         {
             this.FileNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.generateButton = new System.Windows.Forms.Button();
+            this.GenerateButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SetDateTime = new System.Windows.Forms.DateTimePicker();
+            this.ListFormButton = new System.Windows.Forms.Button();
             this.FileContentBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -54,15 +54,16 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "파일명";
             // 
-            // generateButton
+            // GenerateButton
             // 
-            this.generateButton.AutoSize = true;
-            this.generateButton.Location = new System.Drawing.Point(145, 104);
-            this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(81, 25);
-            this.generateButton.TabIndex = 9;
-            this.generateButton.Text = "리스트 생성";
-            this.generateButton.UseVisualStyleBackColor = true;
+            this.GenerateButton.AutoSize = true;
+            this.GenerateButton.Location = new System.Drawing.Point(145, 104);
+            this.GenerateButton.Name = "GenerateButton";
+            this.GenerateButton.Size = new System.Drawing.Size(81, 25);
+            this.GenerateButton.TabIndex = 9;
+            this.GenerateButton.Text = "리스트 생성";
+            this.GenerateButton.UseVisualStyleBackColor = true;
+            this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // label1
             // 
@@ -74,24 +75,25 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "시간";
             // 
-            // dateTimePicker
+            // SetDateTime
             // 
-            this.dateTimePicker.CustomFormat = "MMM월 dd일 (ddd) HH:mm:ss";
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(57, 70);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(169, 23);
-            this.dateTimePicker.TabIndex = 7;
+            this.SetDateTime.CustomFormat = "MMM월 dd일 (ddd) HH:mm:ss";
+            this.SetDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SetDateTime.Location = new System.Drawing.Point(57, 70);
+            this.SetDateTime.Name = "SetDateTime";
+            this.SetDateTime.Size = new System.Drawing.Size(169, 23);
+            this.SetDateTime.TabIndex = 7;
             // 
-            // button1
+            // ListFormButton
             // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(57, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 25);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "리스트 보기";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ListFormButton.AutoSize = true;
+            this.ListFormButton.Location = new System.Drawing.Point(57, 104);
+            this.ListFormButton.Name = "ListFormButton";
+            this.ListFormButton.Size = new System.Drawing.Size(81, 25);
+            this.ListFormButton.TabIndex = 12;
+            this.ListFormButton.Text = "리스트 보기";
+            this.ListFormButton.UseVisualStyleBackColor = true;
+            this.ListFormButton.Click += new System.EventHandler(this.ListFormButton_Click);
             // 
             // FileContentBox
             // 
@@ -116,12 +118,12 @@
             this.ClientSize = new System.Drawing.Size(235, 144);
             this.Controls.Add(this.FileContentBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ListFormButton);
             this.Controls.Add(this.FileNameBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.generateButton);
+            this.Controls.Add(this.GenerateButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.SetDateTime);
             this.Name = "RegistForm";
             this.Text = "등록";
             this.ResumeLayout(false);
@@ -133,10 +135,10 @@
 
         private TextBox FileNameBox;
         private Label label2;
-        private Button generateButton;
+        private Button GenerateButton;
         private Label label1;
-        private DateTimePicker dateTimePicker;
-        private Button button1;
+        private DateTimePicker SetDateTime;
+        private Button ListFormButton;
         private TextBox FileContentBox;
         private Label label3;
     }

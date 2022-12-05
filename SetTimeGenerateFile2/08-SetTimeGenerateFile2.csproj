@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SetTimeGenerateFile2_Back\08-SetTimeGenerateFile2_Back.csproj" />
+  </ItemGroup>
+
 </Project>
