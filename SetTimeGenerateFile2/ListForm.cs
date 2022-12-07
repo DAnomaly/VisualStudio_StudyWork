@@ -72,7 +72,7 @@ namespace SetTimeGenerateFile2
         /// <param name="e"></param>
         private void ListForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F5)
+            if (e.KeyCode == Keys.F5)
                 LoadList();
         }
     }

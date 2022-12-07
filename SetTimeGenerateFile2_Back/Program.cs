@@ -1,6 +1,5 @@
 ﻿using SetTimeGenerateFile2.Data;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Timers;
 using UtilLibrary.File;
 
@@ -31,7 +30,9 @@ namespace SetTimeGenerateFile2_Back
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Enabled = true;
 
-            while (true) { }
+            while (true)
+                Thread.Sleep(100000);
+
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace SetTimeGenerateFile2_Back
                     File.WriteAllText(FolderPath + "/" + info.FileName, info.Content);
                     ControlDataInfo.SaveDataInfo(info);
                 }
-            
+
         }
 
         /// <summary>
