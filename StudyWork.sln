@@ -21,20 +21,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-DemoCalculator", "05-Dem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-WebSocketConnection", "06-WebSocketConnection\06-WebSocketConnection.csproj", "{47CD92A2-155F-4772-9B18-C0D7E3A6B8AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-SetTimeGenerateFile", "SetTimeGenerateFile\07-SetTimeGenerateFile.csproj", "{C76317F8-9F91-4ABB-B826-7C8EC5D7E476}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-SetTimeGenerateFile2", "SetTimeGenerateFile2\08-SetTimeGenerateFile2.csproj", "{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-SetTimeGenerateFile2_Back", "SetTimeGenerateFile2_Back\08-SetTimeGenerateFile2_Back.csproj", "{51418D53-1006-432B-804E-E30BD02A733A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B06B079B-2523-4429-B3F0-FED1205A14C8}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilLibrary", "UtilLibrary\UtilLibrary.csproj", "{24C603FC-59E9-46F9-8309-15BECE24FE66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilLibrary", "UtilLibrary\UtilLibrary.csproj", "{24C603FC-59E9-46F9-8309-15BECE24FE66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{3D9F7A52-812D-4DAD-9762-709051EEB447}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsole", "TestConsole\TestConsole.csproj", "{3D9F7A52-812D-4DAD-9762-709051EEB447}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-SetTimeGenerateFile", "07-SetTimeGenerateFile\07-SetTimeGenerateFile.csproj", "{280E3761-83DE-458F-9A23-5334C5A2A842}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-SetTimeGenerateFile2", "08-SetTimeGenerateFile2\08-SetTimeGenerateFile2.csproj", "{87BD9BB1-806B-4B17-BCBE-41A6CFDF2461}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-SetTimeGenerateFile2_Back", "08-SetTimeGenerateFile2_Back\08-SetTimeGenerateFile2_Back.csproj", "{82C11842-5F3C-4726-B1B5-C640247EE81C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,18 +66,6 @@ Global
 		{47CD92A2-155F-4772-9B18-C0D7E3A6B8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47CD92A2-155F-4772-9B18-C0D7E3A6B8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47CD92A2-155F-4772-9B18-C0D7E3A6B8AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C76317F8-9F91-4ABB-B826-7C8EC5D7E476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C76317F8-9F91-4ABB-B826-7C8EC5D7E476}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C76317F8-9F91-4ABB-B826-7C8EC5D7E476}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C76317F8-9F91-4ABB-B826-7C8EC5D7E476}.Release|Any CPU.Build.0 = Release|Any CPU
-		{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{034A7E0B-3AAE-4DB0-957D-C8D0A75E0435}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51418D53-1006-432B-804E-E30BD02A733A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51418D53-1006-432B-804E-E30BD02A733A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51418D53-1006-432B-804E-E30BD02A733A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51418D53-1006-432B-804E-E30BD02A733A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24C603FC-59E9-46F9-8309-15BECE24FE66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24C603FC-59E9-46F9-8309-15BECE24FE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24C603FC-59E9-46F9-8309-15BECE24FE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -86,6 +74,18 @@ Global
 		{3D9F7A52-812D-4DAD-9762-709051EEB447}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D9F7A52-812D-4DAD-9762-709051EEB447}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D9F7A52-812D-4DAD-9762-709051EEB447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280E3761-83DE-458F-9A23-5334C5A2A842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280E3761-83DE-458F-9A23-5334C5A2A842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280E3761-83DE-458F-9A23-5334C5A2A842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280E3761-83DE-458F-9A23-5334C5A2A842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BD9BB1-806B-4B17-BCBE-41A6CFDF2461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BD9BB1-806B-4B17-BCBE-41A6CFDF2461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BD9BB1-806B-4B17-BCBE-41A6CFDF2461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BD9BB1-806B-4B17-BCBE-41A6CFDF2461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C11842-5F3C-4726-B1B5-C640247EE81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C11842-5F3C-4726-B1B5-C640247EE81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C11842-5F3C-4726-B1B5-C640247EE81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C11842-5F3C-4726-B1B5-C640247EE81C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
