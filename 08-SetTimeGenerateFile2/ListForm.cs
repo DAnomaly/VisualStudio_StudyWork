@@ -1,4 +1,5 @@
 ﻿using SetTimeGenerateFile2.Data;
+using UtilLibrary.File;
 
 namespace SetTimeGenerateFile2
 {
@@ -23,12 +24,39 @@ namespace SetTimeGenerateFile2
         private void LoadList()
         {
             DataTable.Rows.Clear();
-
-            DataInfos = ControlDataInfo.LoadDataInfo();
-            foreach (DataInfo info in DataInfos)
-                DataTable.Rows.Add(info.FileName, new DateTime(info.RegTime).ToString(), new DateTime(info.WorkTime).ToString(), info.IsWork ? "등록됨" : "작업대기");
+            try
+            {
+                LogWriter.Log("목록을 불러옵니다...");
+                DataInfos = ControlDataInfo.LoadDataInfo();
+                foreach (DataInfo info in DataInfos)
+                    DataTable.Rows.Add(info.FileName, new DateTime(info.RegTime).ToString(), new DateTime(info.WorkTime).ToString(), ShowStatus(info.IsStatus));
+            }
+            catch (Exception ex)
+            {
+                LogWriter.Log("목록을 불러오는데에 실패하였습니다. ExceptionMessage: " + ex.Message);
+            }
 
             DataTable.AutoResizeColumns();
+        }
+
+        /// <summary>
+        /// 작업상태를 한글로 반환합니다.
+        /// </summary>
+        /// <see cref="LoadList"/>
+        /// <param name="isStatus"></param>
+        /// <returns></returns>
+        private static string ShowStatus(string isStatus)
+        {
+            if (isStatus == ControlDataInfo.IsReady)
+                return "작업대기";
+            else if (isStatus == ControlDataInfo.IsWorked)
+                return "등록됨";
+            else if (isStatus == ControlDataInfo.IsPast)
+                return "누락된처리";
+            else if (isStatus == ControlDataInfo.IsError)
+                return "오류";
+            else
+                return isStatus;
         }
 
         /// <summary>

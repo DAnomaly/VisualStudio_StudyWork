@@ -1,4 +1,5 @@
 ﻿using SetTimeGenerateFile2.Data;
+using UtilLibrary.File;
 
 namespace SetTimeGenerateFile2
 {
@@ -43,8 +44,16 @@ namespace SetTimeGenerateFile2
                 return;
             }
             // 작업 대기열 생성
-            ControlDataInfo.SaveDataInfo(FileNameBox.Text + ".dat", FileContentBox.Text, SetDateTime.Value);
-            MessageBox.Show(string.Format("{0}\n해당 시간으로 {1} 작업이 생성됩니다.", SetDateTime.Value, FileNameBox.Text), "대기열 생성");
+            try
+            {
+                ControlDataInfo.SaveDataInfo(FileNameBox.Text + ".dat", FileContentBox.Text, SetDateTime.Value);
+                LogWriter.Log("대기열 생성: " + FileNameBox.Text + ".dat");
+                MessageBox.Show(string.Format("{0}\n해당 시간으로 {1} 작업이 생성됩니다.", SetDateTime.Value, FileNameBox.Text), "대기열 생성");
+            }
+            catch (Exception ex)
+            {
+                LogWriter.Log("대기열 생성실패: " + FileNameBox.Text + ".dat, ExceptionMessage:" + ex.Message);
+            }
         }
     }
 }

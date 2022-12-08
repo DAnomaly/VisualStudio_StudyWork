@@ -26,7 +26,7 @@ namespace SetTimeGenerateFile2.Data
         /// <summary>
         /// 작업 여부
         /// </summary>
-        public bool IsWork { get; set; }
+        public string IsStatus { get; set; }
     }
 }
 #pragma warning restore CS8618

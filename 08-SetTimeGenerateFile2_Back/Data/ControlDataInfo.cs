@@ -7,6 +7,12 @@ namespace SetTimeGenerateFile2.Data
     /// </summary>
     public static class ControlDataInfo
     {
+
+        public static string IsReady { get { return "00"; } }
+        public static string IsWorked { get { return "01"; } }
+        public static string IsPast { get { return "09"; } }
+        public static string IsError { get { return "99"; } }
+
         /// <summary>
         /// 클래스 파일 저장경로
         /// </summary>
@@ -21,7 +27,7 @@ namespace SetTimeGenerateFile2.Data
         public static void SaveDataInfo(string fileName, string content, DateTime setTime)
         {
             // GetFolderPath : 해당 경로가 있는지 확인, 없으면 폴더를 생성
-            DirectoryInfo di = new DirectoryInfo(GetClassFolderPath);
+            DirectoryInfo di = new(GetClassFolderPath);
             if (di.Exists == false)
                 di.Create();
 
@@ -31,7 +37,8 @@ namespace SetTimeGenerateFile2.Data
                 FileName = fileName,
                 Content = content,
                 WorkTime = setTime.Ticks,
-                RegTime = DateTime.Now.Ticks
+                RegTime = DateTime.Now.Ticks,
+                IsStatus = IsReady
             };
 
             string path = GetClassFolderPath + "/" + fileName[..fileName.LastIndexOf(".")] + ".xml";
@@ -40,7 +47,7 @@ namespace SetTimeGenerateFile2.Data
                 File.Delete(path);
 
             // 클래스를 파일로 저장
-            using (StreamWriter wr = new StreamWriter(path))
+            using (StreamWriter wr = new(path))
             {
                 XmlSerializer xs = new XmlSerializer(typeof(DataInfo));
                 xs.Serialize(wr, data);

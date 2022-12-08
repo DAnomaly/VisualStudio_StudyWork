@@ -7,9 +7,18 @@ namespace SetTimeGenerateFile2_Back
 {
     internal class Program
     {
+        #region 0. 클래스 필드
+        /// <summary>
+        /// Config 내용 : data 폴더 경로
+        /// </summary>
         private static string FolderPath { get; set; }
+        /// <summary>
+        /// Config 내용 : 동작간격
+        /// </summary>
         private static int TimerTick { get; set; }
+        #endregion
 
+        #region 1. Main 매소드
         /// <summary>
         /// Main 매소드
         /// </summary>
@@ -19,20 +28,43 @@ namespace SetTimeGenerateFile2_Back
             if (IsExistProcess(Process.GetCurrentProcess().ProcessName))
                 return;
 
+            LogWriter.Log("PROGRAM START");
+
             // Config파일을 읽습니다.
             ReadConfig("Config.ini");
             // FolderPath가 없으면 종료
             if (FolderPath.Equals(""))
                 return;
 
-            // 10초마다 OnTimedEvent를 실행합니다.
-            System.Timers.Timer timer = new System.Timers.Timer(1000 * TimerTick);
+            // 정해진 시간이 지난 수행작업을 확인합니다.
+            CheckPastWorks();
+
+            // TimerTick초마다 OnTimedEvent를 실행합니다.
+            System.Timers.Timer timer = new(1000 * TimerTick);
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Enabled = true;
 
             while (true)
                 Thread.Sleep(100000);
 
+        }
+        #endregion
+
+        #region 2. (private) 동작 메소드
+        /// <summary>
+        /// 시간이 지난 수행작업 체크 후 업데이트
+        /// </summary>
+        private static void CheckPastWorks()
+        {
+            List<DataInfo> dataInfos = ControlDataInfo.LoadDataInfo();
+
+            foreach (DataInfo info in dataInfos)
+                if (info.IsStatus == ControlDataInfo.IsReady && DateTime.Now.Ticks >= info.WorkTime)
+                {
+                    info.IsStatus = ControlDataInfo.IsPast;
+                    ControlDataInfo.SaveDataInfo(info);
+                    LogWriter.Log("PAST FILE: " + info.FileName);
+                }
         }
 
         /// <summary>
@@ -65,13 +97,22 @@ namespace SetTimeGenerateFile2_Back
             List<DataInfo> dataInfos = ControlDataInfo.LoadDataInfo();
 
             foreach (DataInfo info in dataInfos)
-                if (info.IsWork == false && DateTime.Now.Ticks >= info.WorkTime)
+                if (info.IsStatus == ControlDataInfo.IsReady && DateTime.Now.Ticks >= info.WorkTime)
                 {
-                    info.IsWork = true;
-                    File.WriteAllText(FolderPath + "/" + info.FileName, info.Content);
-                    ControlDataInfo.SaveDataInfo(info);
+                    info.IsStatus = ControlDataInfo.IsWorked;
+                    try
+                    {
+                        File.WriteAllText(FolderPath + "/" + info.FileName, info.Content);
+                        ControlDataInfo.SaveDataInfo(info);
+                        LogWriter.Log("REGIST FILE: " + info.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        info.IsStatus = ControlDataInfo.IsError;
+                        ControlDataInfo.SaveDataInfo(info);
+                        LogWriter.Log("ERROR FILE: " + info.FileName + ", ExceptionMessage: " + ex.Message);
+                    }
                 }
-
         }
 
         /// <summary>
@@ -80,12 +121,13 @@ namespace SetTimeGenerateFile2_Back
         /// <param name="filename"></param>
         private static void ReadConfig(string filename)
         {
-            IniFile ini = new IniFile();
+            IniFile ini = new();
             ini.Load(filename);
 
             FolderPath = ini["Project_Config"]["FolderDirectory"].GetString();
             TimerTick = ini["Project_Config"]["TimerTick"].ToInt(10);
         }
+        #endregion
 
     }
 }

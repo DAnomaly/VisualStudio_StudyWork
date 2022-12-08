@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SetTimeGenerateFile2_Back\08-SetTimeGenerateFile2_Back.csproj" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\08-SetTimeGenerateFile2_Back\08-SetTimeGenerateFile2_Back.csproj" />
   </ItemGroup>
 
 </Project>
