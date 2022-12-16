@@ -246,3 +246,6 @@ ModelManifest.xml
 
 # ShareZipFile
 StudyWork.zip
+
+# Sqlite db 임시파일
+*.db-journal
