@@ -29,10 +29,12 @@
     private void InitializeComponent()
     {
             this.DataTable = new System.Windows.Forms.DataGridView();
+            this.DataPrimeryNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataRegTIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataWorkDataTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataIsWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataIsCancel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,10 +46,12 @@
             this.DataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataPrimeryNo,
             this.DataFileName,
             this.DataRegTIme,
             this.DataWorkDataTime,
-            this.DataIsWork});
+            this.DataIsWork,
+            this.DataIsCancel});
             this.DataTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataTable.Location = new System.Drawing.Point(0, 0);
             this.DataTable.Name = "DataTable";
@@ -57,11 +61,22 @@
             this.DataTable.TabIndex = 0;
             this.DataTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataTable_CellMouseClick);
             // 
+            // DataPrimeryNo
+            // 
+            this.DataPrimeryNo.Frozen = true;
+            this.DataPrimeryNo.HeaderText = "NO";
+            this.DataPrimeryNo.Name = "DataPrimeryNo";
+            this.DataPrimeryNo.ReadOnly = true;
+            this.DataPrimeryNo.Visible = false;
+            // 
             // DataFileName
             // 
+            this.DataFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DataFileName.Frozen = true;
             this.DataFileName.HeaderText = "파일명";
             this.DataFileName.Name = "DataFileName";
             this.DataFileName.ReadOnly = true;
+            this.DataFileName.Width = 111;
             // 
             // DataRegTIme
             // 
@@ -81,6 +96,12 @@
             this.DataIsWork.Name = "DataIsWork";
             this.DataIsWork.ReadOnly = true;
             // 
+            // DataIsCancel
+            // 
+            this.DataIsCancel.HeaderText = "취소여부";
+            this.DataIsCancel.Name = "DataIsCancel";
+            this.DataIsCancel.ReadOnly = true;
+            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -99,9 +120,11 @@
         #endregion
 
         private DataGridView DataTable;
+        private DataGridViewTextBoxColumn DataPrimeryNo;
         private DataGridViewTextBoxColumn DataFileName;
         private DataGridViewTextBoxColumn DataRegTIme;
         private DataGridViewTextBoxColumn DataWorkDataTime;
         private DataGridViewTextBoxColumn DataIsWork;
+        private DataGridViewTextBoxColumn DataIsCancel;
     }
 }

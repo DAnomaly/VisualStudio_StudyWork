@@ -1,3 +1,4 @@
+﻿using System.Collections.Generic;
 ﻿using System.Data.SQLite;
 
 namespace ControlQueue
@@ -94,5 +95,19 @@ namespace ControlQueue
 
             cmd.ExecuteNonQuery();
         }
+
+        public static void DeleteQueue(int no)
+        {
+            using SQLiteConnection conn = new(QueueConfig.ConnPath);
+
+            conn.Open();
+            string sql = "DELETE FROM QUEUE WHERE NO = @NO";
+            SQLiteCommand cmd = new(sql, conn);
+
+            cmd.Parameters.AddWithValue("@NO", no);
+
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }
