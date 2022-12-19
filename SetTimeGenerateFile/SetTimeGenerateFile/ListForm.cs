@@ -37,7 +37,7 @@
         /// <param name="e"></param>
         private void DataTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
         }
 
         /// <summary>

@@ -1,6 +1,4 @@
-﻿using ControlQueue;
-
-namespace SetTimeGenerateFile
+﻿namespace SetTimeGenerateFile
 {
     public partial class RegistForm : Form
     {
@@ -33,21 +31,21 @@ namespace SetTimeGenerateFile
         {
             // 파일명 확인
             string filename = FileNameBox.Text;
-            if(    filename == null 
+            if (filename == null
                 || filename.Trim().Length == 0)
             {
                 MessageBox.Show("파일명을 입력해주세요.");
                 FileNameBox.Focus();
                 return;
             }
-            if( filename.LastIndexOf(".") == -1 )
+            if (filename.LastIndexOf(".") == -1)
             {
                 filename += ".dat";
             }
 
             // 내용 확인
             string content = FileContentBox.Text;
-            if (   content == null
+            if (content == null
                 || content.Trim().Length == 0)
             {
                 MessageBox.Show("내용을 입력해주세요.");
@@ -57,7 +55,7 @@ namespace SetTimeGenerateFile
 
             // 시간 확인
             DateTime genDate = SetDateTime.Value;
-            if( DateTime.Now > genDate )
+            if (DateTime.Now > genDate)
             {
                 MessageBox.Show("설정하신 시간이 이미 지났습니다.");
                 SetDateTime.Focus();

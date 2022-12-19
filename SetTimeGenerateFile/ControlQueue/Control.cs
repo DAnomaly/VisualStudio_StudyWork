@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SQLite;
 
 namespace ControlQueue
 {
     public class Control
     {
-        
+
         public static void InsertQueue(string filename, string content, DateTime genDate)
         {
             QueueVO vo = new()
