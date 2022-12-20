@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Data.SQLite;
+﻿using System.Data.SQLite;
 using System.Globalization;
-using System.Threading.Channels;
 
 namespace ControlQueue
 {
@@ -113,10 +111,10 @@ namespace ControlQueue
 
         public static bool IsPossibleGenerate(QueueVO vo)
         {
-            if(vo.IsGen == QueueConfig.IsGenerated || vo.Cancel == QueueConfig.IsCanceled) return false;
+            if (vo.IsGen == QueueConfig.IsGenerated || vo.Cancel == QueueConfig.IsCanceled) return false;
             else if (DateTime.Now < DateTime.ParseExact(vo.GenDate, QueueConfig.DateTimeFormat, CultureInfo.CurrentCulture)) return false;
             else return true;
         }
-        
+
     }
 }

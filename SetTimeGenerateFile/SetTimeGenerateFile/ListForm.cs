@@ -5,7 +5,7 @@ namespace SetTimeGenerateFile
 #pragma warning disable CS8618 // 생성자를 종료할 때 null을 허용하지 않는 필드에 null이 아닌 값을 포함해야 합니다. null 허용으로 선언해 보세요.
     public partial class ListForm : Form
     {
-        
+
         private List<QueueVO> QueueList { get; set; }
 
         public ListForm()
@@ -24,14 +24,14 @@ namespace SetTimeGenerateFile
 
             QueueList = ControlQueue.Control.SelectQueue();
 
-            foreach(QueueVO vo in QueueList)
+            foreach (QueueVO vo in QueueList)
             {
                 DataTable.Rows.Add(
                     vo.No,
-                    vo.FileName, 
-                    vo.RegDate, 
-                    vo.GenDate, 
-                    vo.IsGen == QueueConfig.IsGenerated ? "Y" : "N", 
+                    vo.FileName,
+                    vo.RegDate,
+                    vo.GenDate,
+                    vo.IsGen == QueueConfig.IsGenerated ? "Y" : "N",
                     vo.Cancel == QueueConfig.IsCanceled ? "Y" : "N"
                 );
             }
@@ -56,7 +56,7 @@ namespace SetTimeGenerateFile
                 string noStr = DataTable.Rows[e.RowIndex].Cells[0].Value as string;
 
                 QueueVO vo = null;
-                foreach(QueueVO tmpVO in QueueList)
+                foreach (QueueVO tmpVO in QueueList)
                 {
                     if (tmpVO.No.ToString() == noStr)
                     {
