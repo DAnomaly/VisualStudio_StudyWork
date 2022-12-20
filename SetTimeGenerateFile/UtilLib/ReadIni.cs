@@ -12,7 +12,7 @@
         static ReadIni()
         {
             #region ini 파일 체크
-            string iniFilename = @".\config.ini";
+            string iniFilename = Directory.GetCurrentDirectory() + @"\config.ini";
             if (!File.Exists(iniFilename)) throw new FileNotFoundException("ini파일을 찾을 수 없습니다.\r\n 파일명:" + iniFilename);
             #endregion
             #region ini 내용 확인
