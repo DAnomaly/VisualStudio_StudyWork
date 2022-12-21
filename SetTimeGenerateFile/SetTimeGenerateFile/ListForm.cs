@@ -1,4 +1,5 @@
 ﻿using ControlQueue;
+using UtilLib;
 
 namespace SetTimeGenerateFile
 {
@@ -75,6 +76,7 @@ namespace SetTimeGenerateFile
                 {
                     // 삭제 이벤트
                     ControlQueue.Control.DeleteQueue(vo.No);
+                    LogWriter.Log("DELETE QUEUE: " + vo.ToString());
                     LoadList();
                 };
                 menu.Items.Add(item1);
@@ -88,6 +90,7 @@ namespace SetTimeGenerateFile
                     vo.Cancel = QueueConfig.IsCanceled;
                     // 취소 이벤트
                     ControlQueue.Control.UpdateQueue(vo);
+                    LogWriter.Log("CANCEL QUEUE: " + vo.ToString());
                     LoadList();
                 };
                 menu.Items.Add(item2);

@@ -1,4 +1,7 @@
-﻿namespace SetTimeGenerateFile
+﻿using ControlQueue;
+using UtilLib;
+
+namespace SetTimeGenerateFile
 {
     public partial class RegistForm : Form
     {
@@ -65,11 +68,13 @@
             // 대기열 생성
             try
             {
-                ControlQueue.Control.InsertQueue(filename, content, genDate);
+                QueueVO vo = ControlQueue.Control.InsertQueue(filename, content, genDate);
+                LogWriter.Log("CREATE QUEUE:" + vo.ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("대기열 생성중 오류가 발생했습니다.\r\n" + ex.Message);
+                LogWriter.Log("Exception:대기열 생성중 오류가 발생했습니다.\r\n" + ex.Message);
                 return;
             }
             MessageBox.Show(filename + " 대기열이 생성되었습니다.");

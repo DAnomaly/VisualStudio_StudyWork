@@ -1,4 +1,5 @@
-﻿using System.Data.SQLite;
+﻿using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Globalization;
 
 namespace ControlQueue
@@ -6,7 +7,7 @@ namespace ControlQueue
     public class Control
     {
 
-        public static void InsertQueue(string filename, string content, DateTime genDate)
+        public static QueueVO InsertQueue(string filename, string content, DateTime genDate)
         {
             QueueVO vo = new()
             {
@@ -15,14 +16,15 @@ namespace ControlQueue
                 GenDate = genDate.ToString(QueueConfig.DateTimeFormat)
             };
 
-            InsertQueue(vo);
+            return InsertQueue(vo);
         }
 
-        public static void InsertQueue(QueueVO vo)
+        public static QueueVO InsertQueue(QueueVO vo)
         {
             using SQLiteConnection conn = new(QueueConfig.ConnPath);
 
             conn.Open();
+            #region INSERT
             string sql = "INSERT INTO QUEUE (FILENAME, CONTENT, GENDATE, REGDATE) VALUES (@FILENAME, @CONTENT, @GENDATE, @REGDATE)";
             SQLiteCommand cmd = new(sql, conn);
 
@@ -32,6 +34,33 @@ namespace ControlQueue
             cmd.Parameters.AddWithValue("@REGDATE", DateTime.Now.ToString(QueueConfig.DateTimeFormat));
 
             cmd.ExecuteNonQuery();
+            #endregion
+
+            #region SELECT
+            sql = "SELECT NO, FILENAME, CONTENT, GENDATE, REGDATE, ISGEN, CANCEL FROM QUEUE WHERE NO = MAX(NO)";
+            cmd = new(sql, conn);
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            vo = null;
+            if (dr.Read())
+            {
+                vo = new()
+                {
+                    No = dr.GetInt32(0),
+                    FileName = dr.GetString(1),
+                    Content = dr.GetString(2),
+                    GenDate = dr.GetString(3),
+                    RegDate = dr.GetString(4),
+                    IsGen = dr.GetInt32(5),
+                    Cancel = dr.GetInt32(6)
+                };
+            } 
+            else
+            {
+                throw new NotImplementedException("InertQueue()에서 SELECT문이 실패했습니다. INSERT가 정상적으로 되었는지 확인이 필요합니다.");
+            }
+            #endregion
+
+            return vo;
         }
 
         public static List<QueueVO> SelectQueue()
@@ -41,7 +70,7 @@ namespace ControlQueue
             using SQLiteConnection conn = new(QueueConfig.ConnPath);
 
             conn.Open();
-            string sql = "SELECT NO, FILENAME, CONTENT, GENDATE, REGDATE, ISGEN, CANCEL FROM QUEUE ORDER BY NO";
+            string sql = "SELECT NO, FILENAME, CONTENT, GENDATE, REGDATE, ISGEN, CANCEL FROM QUEUE ORDER BY NO DESC";
             SQLiteCommand cmd = new(sql, conn);
             SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())

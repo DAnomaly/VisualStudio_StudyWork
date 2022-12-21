@@ -12,6 +12,7 @@ foreach (Process p in processes)
     if (cnt > 1)
         return;
 }
+LogWriter.Log("PROGRAM START");
 #endregion
 #region 지나간 대기열 취소
 List<QueueVO> list = Control.SelectQueue();
@@ -30,9 +31,11 @@ static void TimerEvent(object source, ElapsedEventArgs e)
     foreach (QueueVO vo in list)
         if (Control.IsPossibleGenerate(vo))
         {
+            LogWriter.Log(vo.ToString() + "\r\n Generate Work Start...");
             vo.IsGen = QueueConfig.IsGenerated;
             File.WriteAllText(ReadIni.FolderPath + "/" + vo.FileName, vo.Content);
             Control.UpdateQueue(vo);
+            LogWriter.Log(vo.ToString() + "\r\n Generate Work Complete");
         }
 }
 System.Timers.Timer timer = new(ReadIni.TimerTick);
