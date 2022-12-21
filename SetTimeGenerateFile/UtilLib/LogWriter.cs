@@ -4,17 +4,26 @@ namespace UtilLib
 {
     public static class LogWriter
     {
-        private static FileInfo LogFile { get; set; }
+        private static FileInfo LogFile
+        {
+            get
+            {
+                if (LogFolderPath != null && LogFolderPath.Length != 0)
+                    return new FileInfo(LogFolderPath + @"\" + DateTime.Now.ToString("yyyyMMdd") + ".log");
+                else
+                    throw new NotImplementedException("LogFolderPath is null.");
+            }
+        }
         private static string TimeLogStr { get { return DateTime.Now.ToString("[yy.MM.dd H:mm:ss]"); } }
         private static string ProgramName { get { return Process.GetCurrentProcess().ProcessName; } }
+        private static string LogFolderPath { get; set; }
 
         static LogWriter()
         {
-            string logFolderPath = Directory.GetCurrentDirectory() + @"\LOG";
-            if (!Directory.Exists(logFolderPath))
-                Directory.CreateDirectory(logFolderPath);
+            LogFolderPath = Directory.GetCurrentDirectory() + @"\LOG";
+            if (!Directory.Exists(LogFolderPath))
+                Directory.CreateDirectory(LogFolderPath);
 
-            LogFile = new FileInfo(logFolderPath + @"\" + DateTime.Now.ToString("yyyyMMdd") + ".log");
             if (!LogFile.Exists)
                 LogFile.Create();
         }
