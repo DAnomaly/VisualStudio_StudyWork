@@ -26,7 +26,7 @@
                 if (content.IndexOf('#') == 0) continue; // 해당 내용이 주석이면
                 if (content.Contains('[') && content.Contains(']')) // [] 안의 내용 (title)
                 {
-                    tmpTitle = content.Substring(content.IndexOf('['), content.IndexOf(']'));
+                    tmpTitle = content.Substring(content.IndexOf('[') + 1, content.IndexOf(']') - 1);
                     ContentMap.Add(tmpTitle, new());
                     continue;
                 }
@@ -34,7 +34,7 @@
                 {
                     if (tmpTitle == string.Empty) continue;
                     string key = content.Substring(0, content.IndexOf("="));
-                    string value = content.Substring(content.IndexOf("="));
+                    string value = content.Substring(content.IndexOf("=") + 1);
                     ContentMap[tmpTitle].Add(key, value);
                     continue;
                 }
