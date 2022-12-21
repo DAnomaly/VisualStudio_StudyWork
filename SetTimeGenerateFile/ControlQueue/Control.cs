@@ -37,7 +37,7 @@ namespace ControlQueue
             #endregion
 
             #region SELECT
-            sql = "SELECT NO, FILENAME, CONTENT, GENDATE, REGDATE, ISGEN, CANCEL FROM QUEUE WHERE NO = MAX(NO)";
+            sql = "SELECT NO, FILENAME, CONTENT, GENDATE, REGDATE, ISGEN, CANCEL FROM QUEUE WHERE NO = (SELECT MAX(NO) FROM QUEUE)";
             cmd = new(sql, conn);
             SQLiteDataReader dr = cmd.ExecuteReader();
             vo = null;
