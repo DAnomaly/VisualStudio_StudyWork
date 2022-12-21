@@ -14,6 +14,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ControlQueue\ControlQueue.csproj" />
+    <ProjectReference Include="..\GenerateFile\GenerateFile.csproj" />
+    <ProjectReference Include="..\UtilLib\UtilLib.csproj" />
   </ItemGroup>
 
 </Project>
