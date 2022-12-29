@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendFax", "SendFax\SendFax.csproj", "{78DFB1E9-C8E4-4F73-AA88-6690D9219264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaxTest", "FaxTest\FaxTest.csproj", "{963F62C9-048A-42D5-BF40-1644969E9608}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78DFB1E9-C8E4-4F73-AA88-6690D9219264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DFB1E9-C8E4-4F73-AA88-6690D9219264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DFB1E9-C8E4-4F73-AA88-6690D9219264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DFB1E9-C8E4-4F73-AA88-6690D9219264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{963F62C9-048A-42D5-BF40-1644969E9608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{963F62C9-048A-42D5-BF40-1644969E9608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{963F62C9-048A-42D5-BF40-1644969E9608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{963F62C9-048A-42D5-BF40-1644969E9608}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4568D9A6-3728-439C-8689-FBEB500B7B2F}
+	EndGlobalSection
+EndGlobal
