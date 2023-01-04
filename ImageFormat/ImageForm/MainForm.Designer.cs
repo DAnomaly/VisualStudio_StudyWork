@@ -30,12 +30,15 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.StretchCheckBox = new System.Windows.Forms.CheckBox();
             this.FindButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.FormatSelectBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +67,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.StretchCheckBox, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.FindButton, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox2, 0, 1);
@@ -77,7 +81,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(628, 59);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint_1);
+            // 
+            // StretchCheckBox
+            // 
+            this.StretchCheckBox.AutoSize = true;
+            this.StretchCheckBox.Location = new System.Drawing.Point(523, 3);
+            this.StretchCheckBox.Name = "StretchCheckBox";
+            this.StretchCheckBox.Size = new System.Drawing.Size(64, 19);
+            this.StretchCheckBox.TabIndex = 1;
+            this.StretchCheckBox.Text = "Stretch";
+            this.StretchCheckBox.UseVisualStyleBackColor = true;
             // 
             // FindButton
             // 
@@ -144,15 +157,25 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Image Format|*.jpg,*.png,*.gif,*.bmp,*.tiff,*.exif";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "JPeg Image|*.jpg|Png Image|*.png|Gif Image|*.gif|Bitmap Image|*.bmp|Tiff Image|*." +
+    "tiff|EXIF Image|*.exif";
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 401);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "Image Format Chagner";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -171,5 +194,8 @@
         private TextBox textBox2;
         private Button SaveButton;
         private PictureBox pictureBox1;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
+        private CheckBox StretchCheckBox;
     }
 }
