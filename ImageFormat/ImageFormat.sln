@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilLib", "UtilLib\UtilLib.csproj", "{C43B7F2B-551D-40B6-A46D-A3AD81D02D32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageForm", "ImageForm\ImageForm.csproj", "{531F128A-1425-4E9F-950E-EC0FDF02E68A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C43B7F2B-551D-40B6-A46D-A3AD81D02D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C43B7F2B-551D-40B6-A46D-A3AD81D02D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C43B7F2B-551D-40B6-A46D-A3AD81D02D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531F128A-1425-4E9F-950E-EC0FDF02E68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531F128A-1425-4E9F-950E-EC0FDF02E68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531F128A-1425-4E9F-950E-EC0FDF02E68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531F128A-1425-4E9F-950E-EC0FDF02E68A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
